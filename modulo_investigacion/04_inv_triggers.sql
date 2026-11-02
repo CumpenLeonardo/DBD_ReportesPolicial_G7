@@ -6,8 +6,6 @@
 --   03_inv_ddl.sql (tablas INV/OPS)
 --   TB_STAFF_OFFICER con la columna active_case_count
 --   TB_CFG_PARAMETER (el parametro MAX_ACTIVE_CASES lo inserta 05b_inv_data.sql)
---
--- Ejecutar con F5 (Run Script) en SQL Developer.
 -- ===================================================================
 
 -- 2.1 Historial inmutable: prohibe UPDATE y DELETE
