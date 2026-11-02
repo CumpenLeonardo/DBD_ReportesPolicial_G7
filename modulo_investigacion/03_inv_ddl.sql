@@ -9,8 +9,6 @@
 -- ORDEN DE CREACION (por dependencias de FK):
 --   INV_ASSIGNMENT -> INV_SUPPORT_TEAM -> INV_STATUS_HISTORY
 --   -> OPS_OPERATION -> OPS_OPERATION_COMPLAINT -> OPS_OPERATION_STAFF
---
--- Ejecutar con F5 (Run Script) en SQL Developer.
 -- ===================================================================
 
 /* =====================================================================
