@@ -6,8 +6,6 @@
 --   03_inv_ddl.sql y 04_inv_triggers.sql
 --   Andy: TB_CPL_COMPLAINT (current_status, sector_id)
 --   Leonardo: TB_STAFF_OFFICER
---
--- Ejecutar con F5 (Run Script) en SQL Developer.
 -- ===================================================================
 
 CREATE OR REPLACE PACKAGE PKG_INV_MGMT AS
