@@ -7,10 +7,6 @@
 --   Andy    : TB_CPL_COMPLAINT con datos (05_cpl_data.sql)
 --   Leonardo: TB_STAFF_OFFICER (minimo 3 oficiales), TB_TERR_SECTOR
 --   TB_CFG_PARAMETER
---
--- No depende del paquete PKG_INV_MGMT (inserta directo para poder fechar en el pasado).
---
--- Ejecutar con F5 (Run Script) en SQL Developer.
 -- ===================================================================
 
 SET SERVEROUTPUT ON;
