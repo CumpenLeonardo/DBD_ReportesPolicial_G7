@@ -5,11 +5,6 @@
 -- PRERREQUISITOS (deben existir antes de ejecutar):
 --   Leonardo: TB_TERR_SECTOR (con datos)
 --   John    : TB_COM_NEIGHBORHOOD_ASSOC, TB_COM_CHANNEL (DDL)
---
--- IMPORTANTE: ejecutar ANTES de 05_cpl_data.sql de Andy, porque las
--- denuncias referencian a las juntas vecinales.
---
--- Ejecutar con F5 (Run Script) en SQL Developer.
 -- ===================================================================
 
 SET SERVEROUTPUT ON;
