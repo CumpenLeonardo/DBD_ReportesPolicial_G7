@@ -5,7 +5,7 @@
 -- PRERREQUISITOS (deben existir antes de ejecutar):
 --   03_inv_ddl.sql (tablas INV/OPS)
 --   TB_STAFF_OFFICER con la columna active_case_count
---   TB_CFG_PARAMETER (el parametro MAX_ACTIVE_CASES lo inserta 05b_inv_data.sql)
+--   TB_CFG_PARAMETER (columnas param_name, param_value, description)
 -- ===================================================================
 
 -- 2.1 Historial inmutable: prohibe UPDATE y DELETE
@@ -81,3 +81,13 @@ BEGIN
   END IF;
 END;
 /
+
+-- Parametro N que lee TRG_CHECK_MAX_ACTIVE_CASES. Sin esta fila el trigger
+-- rechaza toda asignacion (ORA-20002). Se inserta solo si no existe.
+MERGE INTO TB_CFG_PARAMETER p
+USING (SELECT 'MAX_ACTIVE_CASES' AS param_name FROM dual) s
+   ON (p.param_name = s.param_name)
+WHEN NOT MATCHED THEN
+  INSERT (param_name, param_value, description)
+  VALUES ('MAX_ACTIVE_CASES', '15', 'Limite N de casos activos por investigador (RN-08)');
+COMMIT;
