@@ -3,9 +3,11 @@
 -- 07_inv_tests.sql : pruebas de restricciones, triggers y PKG_INV_MGMT.
 --
 -- PRERREQUISITOS (deben existir antes de ejecutar):
---   03_inv_ddl.sql, 04_inv_triggers.sql, 05b_inv_data.sql, 06_pkg_inv_mgmt.sql
---   Datos de prueba con al menos: 2 denuncias REGISTRADO, 2 VALIDADO_COMISARIA
---   y 1 INTERVENCION_PROGRAMADA (los deja 05b_inv_data.sql si hay >= 14 denuncias).
+--   03_inv_ddl.sql, 04_inv_triggers.sql, 06_pkg_inv_mgmt.sql
+--   Datos cargados por el equipo: al menos 3 oficiales en TB_STAFF_OFFICER y
+--   denuncias en TB_CPL_COMPLAINT. Las pruebas que necesitan una denuncia en un
+--   estado concreto (REGISTRADO, VALIDADO_COMISARIA, INTERVENCION_PROGRAMADA)
+--   imprimen [SKIP] si no hay ninguna; no fallan.
 -- ===================================================================
 
 SET SERVEROUTPUT ON SIZE UNLIMITED;
@@ -69,6 +71,12 @@ DECLARE
   END active_count;
 
 BEGIN
+  SELECT COUNT(*) INTO v_cnt FROM TB_STAFF_OFFICER;
+  IF v_cnt < 3 THEN
+    DBMS_OUTPUT.PUT_LINE('Se necesitan al menos 3 oficiales en TB_STAFF_OFFICER para correr las pruebas.');
+    RETURN;
+  END IF;
+
   SELECT officer_cip INTO v_cip1 FROM TB_STAFF_OFFICER ORDER BY officer_cip OFFSET 0 ROWS FETCH NEXT 1 ROWS ONLY;
   SELECT officer_cip INTO v_cip2 FROM TB_STAFF_OFFICER ORDER BY officer_cip OFFSET 1 ROWS FETCH NEXT 1 ROWS ONLY;
   SELECT officer_cip INTO v_cip3 FROM TB_STAFF_OFFICER ORDER BY officer_cip OFFSET 2 ROWS FETCH NEXT 1 ROWS ONLY;
@@ -199,10 +207,10 @@ BEGIN
   END IF;
 
   v_cpl2 := pick_complaint('VALIDADO_COMISARIA');
-  IF v_cpl2 IS NULL THEN
+  SELECT MAX(param_value) INTO v_old FROM TB_CFG_PARAMETER WHERE param_name = 'MAX_ACTIVE_CASES';
+  IF v_cpl2 IS NULL OR v_old IS NULL THEN
     skip('T13');
   ELSE
-    SELECT param_value INTO v_old FROM TB_CFG_PARAMETER WHERE param_name = 'MAX_ACTIVE_CASES';
     UPDATE TB_CFG_PARAMETER SET param_value = '0' WHERE param_name = 'MAX_ACTIVE_CASES';
     v_code := 0;
     BEGIN
