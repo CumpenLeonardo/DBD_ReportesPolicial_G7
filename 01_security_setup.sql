@@ -87,7 +87,7 @@ BEGIN
       -- Native OMF syntax: handles paths and filenames automatically
       EXECUTE IMMEDIATE 'CREATE TABLESPACE ts_geo_data DATAFILE SIZE 200M AUTOEXTEND ON NEXT 50M MAXSIZE 2G';
     ELSE
-      -- Standard relative filename syntax con REUSE (a prueba de archivos huérfanos)
+      -- Standard relative filename syntax with REUSE (resilient against orphaned datafiles)
       EXECUTE IMMEDIATE 'CREATE TABLESPACE ts_geo_data DATAFILE ''ts_geo_data01.dbf'' SIZE 200M REUSE AUTOEXTEND ON NEXT 50M MAXSIZE 2G';
     END IF;
 
