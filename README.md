@@ -68,7 +68,7 @@ Seguidamente, el instalador le solicitará las contraseñas para los usuarios de
 
 Al finalizar (en aproximadamente 10 a 15 segundos), el proceso terminará automáticamente y dejará toda la traza registrada en el archivo install_log.txt dentro de la misma carpeta.
 
-Método 2: Ejecución desde Oracle SQL Developer (Alternativo)
+### Método 2: Ejecución desde Oracle SQL Developer (Alternativo)
 Si prefiere ejecutar los scripts desde la interfaz gráfica de Oracle SQL Developer (dado que el comando CONNECT interactivo de 00_run_all.sql está diseñado para terminal):
 
 Conéctese como SYS (Rol: SYSDBA), abra 01_security_setup.sql y ejecútelo como script presionando F5 (ingrese las contraseñas solicitadas en los cuadros emergentes).
