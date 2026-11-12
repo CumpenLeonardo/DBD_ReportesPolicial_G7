@@ -36,8 +36,6 @@ Los archivos están numerados según el orden en que se ejecutan:
 
 ## Cómo instalarlo en su computadora
 
----
-
 ### Opción 1: Instalación automática por consola 
 
 1. Descargue el repositorio (`Code > Download ZIP`) y descomprímalo.
