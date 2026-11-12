@@ -36,34 +36,6 @@ Los archivos están numerados según el orden en que se ejecutan:
 
 ## Cómo instalarlo en su computadora
 
-### Opción 1: Instalación automática por consola 
-
-1. Descargue el repositorio (`Code > Download ZIP`) y descomprímalo.
-2. Abra una terminal (CMD, PowerShell o Bash) y entre a la carpeta donde están los `.sql`:
-
-~~~bash
-cd ruta/a/DBD_ReportesPolicial_G7-Script-FINAL
-~~~
-
-3. Ejecute el script maestro con SQL\*Plus:
-
-~~~bash
-sqlplus /nolog @00_run_all.sql
-~~~
-
-4. El script le pedirá ingresar por teclado:
-   * **Service:** el servicio de su PDB (por ejemplo: `localhost:1521/FREEPDB1` o `localhost:1521/XEPDB1`).
-   * **SYS password:** la contraseña de su usuario `SYS`.
-   * **Contraseñas de los usuarios del proyecto:** la clave que desee asignar a `GEO_OWNER`, `GEO_APP`, `GEO_CHIEF` y `GEO_AUDITOR`.
-
-En unos 10–15 segundos terminará todo el despliegue y quedará el registro completo en **`install_log.txt`** dentro de la misma carpeta.
-
----
-
-### Opción 2: Ejecución paso a paso desde SQL Developer
-
-Si prefiere correrlo desde **Oracle SQL Developer**:
-
 1. Conéctese como **`SYS` (Rol: `SYSDBA`)**, abra **`01_security_setup.sql`** y ejecútelo con **`F5`** (ingresando las contraseñas en las ventanas que vayan saliendo).
 2. Cree una conexión nueva para **`GEO_OWNER`** (con la clave que le puso en el paso anterior y el mismo servicio PDB).
 3. Conectado como **`GEO_OWNER`**, abra y ejecute con **`F5`** cada archivo en orden:
