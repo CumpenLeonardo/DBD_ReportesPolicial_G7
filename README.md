@@ -36,13 +36,9 @@ Los archivos están numerados según el orden en que se ejecutan:
 
 ## Cómo instalarlo en su computadora
 
-### Lo que se necesita
-* **Oracle Database** (19c, 21c o 23ai Free) corriendo en local o en Docker, con **Oracle Spatial / Locator** activo (viene por defecto en XE / Free / EE).
-* **SQL\*Plus** en terminal (o **Oracle SQL Developer** si prefiere interfaz gráfica).
-
 ---
 
-### Opción 1: Instalación automática por consola (Recomendada)
+### Opción 1: Instalación automática por consola 
 
 1. Descargue el repositorio (`Code > Download ZIP`) y descomprímalo.
 2. Abra una terminal (CMD, PowerShell o Bash) y entre a la carpeta donde están los `.sql`:
