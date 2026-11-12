@@ -1,4 +1,4 @@
-# Sistema de Gestión y Georreferenciación de Denuncias Policiales (Grupo 7)
+## Sistema de Gestión y Georreferenciación de Denuncias Policiales (Grupo 7)
 
 Repositorio con los scripts en Oracle Database (SQL, PL/SQL y soporte espacial `SDO_GEOMETRY`) para la **Entrega Parcial 2** del curso de Administración de Base de Datos.
 
@@ -47,53 +47,46 @@ Los archivos están numerados según el orden en que se ejecutan:
 1. Descargue el repositorio (`Code > Download ZIP`) y descomprímalo.
 2. Abra una terminal (CMD, PowerShell o Bash) y entre a la carpeta donde están los `.sql`:
 
-```bash
+~~~bash
 cd ruta/a/DBD_ReportesPolicial_G7-Script-FINAL
+~~~
 
-Ejecute el script maestro con SQL*Plus:
+3. Ejecute el script maestro con SQL\*Plus:
 
-Bash
+~~~bash
 sqlplus /nolog @00_run_all.sql
-El script le pedirá ingresar por teclado:
+~~~
 
-Service: el servicio de su PDB (por ejemplo: localhost:1521/FREEPDB1 o localhost:1521/XEPDB1).
+4. El script le pedirá ingresar por teclado:
+   * **Service:** el servicio de su PDB (por ejemplo: `localhost:1521/FREEPDB1` o `localhost:1521/XEPDB1`).
+   * **SYS password:** la contraseña de su usuario `SYS`.
+   * **Contraseñas de los usuarios del proyecto:** la clave que desee asignar a `GEO_OWNER`, `GEO_APP`, `GEO_CHIEF` y `GEO_AUDITOR`.
 
-SYS password: la contraseña de su usuario SYS.
+En unos 10–15 segundos terminará todo el despliegue y quedará el registro completo en **`install_log.txt`** dentro de la misma carpeta.
 
-Contraseñas de los usuarios del proyecto: la clave que desee asignar a GEO_OWNER, GEO_APP, GEO_CHIEF y GEO_AUDITOR.
+---
 
-En unos 10–15 segundos terminará todo el despliegue y quedará el registro completo en install_log.txt dentro de la misma carpeta.
+### Opción 2: Ejecución paso a paso desde SQL Developer
 
-Opción 2: Ejecución paso a paso desde SQL Developer
-Si prefiere correrlo desde Oracle SQL Developer:
+Si prefiere correrlo desde **Oracle SQL Developer**:
 
-Conéctese como SYS (Rol: SYSDBA), abra 01_security_setup.sql y ejecútelo con F5 (ingresando las contraseñas en las ventanas que vayan saliendo).
+1. Conéctese como **`SYS` (Rol: `SYSDBA`)**, abra **`01_security_setup.sql`** y ejecútelo con **`F5`** (ingresando las contraseñas en las ventanas que vayan saliendo).
+2. Cree una conexión nueva para **`GEO_OWNER`** (con la clave que le puso en el paso anterior y el mismo servicio PDB).
+3. Conectado como **`GEO_OWNER`**, abra y ejecute con **`F5`** cada archivo en orden:
+   * `02_pkg_db_installer.sql` *(opcional: si ya había instalado antes, ejecute `EXEC pkg_db_installer.drop_all_objects;` para limpiar)*
+   * `10_schema.sql`
+   * `20_packages.sql`
+   * `30_data.sql`
+   * `40_grants_roles.sql`
+   * `50_tests.sql`
+   * `99_verify.sql`
 
-Cree una conexión nueva para GEO_OWNER (con la clave que le puso en el paso anterior y el mismo servicio PDB).
+---
 
-Conectado como GEO_OWNER, abra y ejecute con F5 cada archivo en orden:
+## Qué esperar al finalizar (`99_verify.sql`)
 
-02_pkg_db_installer.sql (opcional: si ya había instalado antes, ejecute EXEC pkg_db_installer.drop_all_objects; para limpiar)
-
-10_schema.sql
-
-20_packages.sql
-
-30_data.sql
-
-40_grants_roles.sql
-
-50_tests.sql
-
-99_verify.sql
-
-Qué esperar al finalizar (99_verify.sql)
 Si todo salió bien, el resumen final mostrará:
-
-Objetos inválidos y errores de compilación: 0
-
-Objetos creados: 18 tablas, 16 secuencias (SEQ_*), 4 vistas, 4 paquetes y 7 triggers.
-
-Pruebas unitarias (50_tests.sql): 64 PASS, 0 FAIL (23 de Denuncias, 12 de Organización/Territorio, 21 de Investigación/Operativos y 8 de Vistas).
-
-Consistencia: SECTORES_SIN_POLIGONO = 0, CONTADORES_INCORRECTOS = 0 y DENUNCIAS_SIN_GEOMETRIA = 0.
+* **Objetos inválidos y errores de compilación:** `0`
+* **Objetos creados:** `18` tablas, `16` secuencias (`SEQ_*`), `4` vistas, `4` paquetes y `7` triggers.
+* **Pruebas unitarias (`50_tests.sql`):** `64 PASS, 0 FAIL` (23 de Denuncias, 12 de Organización/Territorio, 21 de Investigación/Operativos y 8 de Vistas).
+* **Consistencia:** `SECTORES_SIN_POLIGONO = 0`, `CONTADORES_INCORRECTOS = 0` y `DENUNCIAS_SIN_GEOMETRIA = 0`.
