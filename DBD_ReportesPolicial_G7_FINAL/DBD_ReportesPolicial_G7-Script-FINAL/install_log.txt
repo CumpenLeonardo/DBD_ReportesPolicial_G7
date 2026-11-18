@@ -1,0 +1,891 @@
+Conectado.
+-> Terminating existing sessions, users, roles, and tablespace...
+
+Procedimiento PL/SQL terminado correctamente.
+-> Tablespace TS_GEO_DATA created successfully.
+
+Procedimiento PL/SQL terminado correctamente.
+
+Role ROLE_GEO_ADMIN creado.
+
+
+Role ROLE_GEO_OPERATOR creado.
+
+
+Role ROLE_GEO_READONLY creado.
+
+
+Role ROLE_GEO_CHIEF creado.
+
+
+Grant correcto.
+
+
+User GEO_OWNER creado.
+
+
+Grant correcto.
+
+
+User GEO_APP creado.
+
+
+Grant correcto.
+
+
+User GEO_AUDITOR creado.
+
+
+Grant correcto.
+
+
+User GEO_CHIEF creado.
+
+
+Grant correcto.
+
+Conectado.
+
+Package PKG_DB_INSTALLER compilado
+
+
+Package Body PKG_DB_INSTALLER compilado
+
+Procedimiento PL/SQL terminado correctamente.
+
+Sequence SEQ_CFG_CURRENCY creado.
+
+
+Sequence SEQ_ORG_DIVISION creado.
+
+
+Sequence SEQ_ORG_STATION creado.
+
+
+Sequence SEQ_TERR_SECTOR creado.
+
+
+Sequence SEQ_STAFF_RANK creado.
+
+
+Table TB_CFG_CURRENCY creado.
+
+
+Table TB_ORG_DIVISION creado.
+
+
+Table TB_ORG_STATION creado.
+
+
+Table TB_TERR_SECTOR creado.
+
+
+Table TB_STAFF_RANK creado.
+
+
+Table TB_STAFF_OFFICER creado.
+
+
+Index IDX_ORG_STATION_DIVISION creado.
+
+
+Index IDX_TERR_SECTOR_STATION creado.
+
+
+Index IDX_STAFF_OFFICER_RANK creado.
+
+
+Index IDX_STAFF_OFFICER_STATION creado.
+
+
+Index IDX_STAFF_OFFICER_SUPER creado.
+
+
+1 fila insertadas.
+
+Confirmación terminada.
+
+Index IDX_TERR_SECTOR_POLYGON creado.
+
+
+Sequence SEQ_COM_CHANNEL creado.
+
+
+Sequence SEQ_COM_ASSOC creado.
+
+
+Table TB_COM_CHANNEL creado.
+
+
+Table TB_COM_NEIGHBORHOOD_ASSOC creado.
+
+
+Index IDX_COM_ASSOC_SECTOR creado.
+
+
+Index IDX_COM_ASSOC_CHANNEL creado.
+
+
+Sequence SEQ_CPL_MODALITY creado.
+
+
+Sequence SEQ_CPL_ESTABLISHMENT creado.
+
+
+Sequence SEQ_CPL_REPORTER creado.
+
+
+Sequence SEQ_CPL_PROTECTION creado.
+
+
+Sequence SEQ_CPL_COMPLAINT creado.
+
+
+Sequence SEQ_CPL_EVIDENCE creado.
+
+
+Table TB_CPL_MODALITY creado.
+
+
+Table TB_CPL_ESTABLISHMENT creado.
+
+
+Table TB_CPL_REPORTER creado.
+
+
+Table TB_CPL_COMPLAINT_PROTECTION creado.
+
+
+Table TB_CPL_COMPLAINT creado.
+
+
+Table TB_CPL_DIGITAL_EVIDENCE creado.
+
+
+Index IDX_CPL_PROT_REPORTER creado.
+
+
+Index IDX_CPL_PROT_OFFICER creado.
+
+
+Index IDX_CPL_CMP_SECTOR creado.
+
+
+Index IDX_CPL_CMP_MODALITY creado.
+
+
+Index IDX_CPL_CMP_ESTAB creado.
+
+
+Index IDX_CPL_CMP_ASSOC creado.
+
+
+Index IDX_CPL_CMP_CURRENCY creado.
+
+
+Index IDX_CPL_CMP_REPORTER creado.
+
+
+Index IDX_CPL_CMP_PROTCODE creado.
+
+
+Index IDX_CPL_EV_COMPLAINT creado.
+
+
+Index IDX_CPL_EV_OFFICER creado.
+
+
+Index IDX_CPL_CMP_INCDATE creado.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+Confirmación terminada.
+
+Index SIDX_CPL_ESTAB_GEOM creado.
+
+
+Index SIDX_CPL_CMP_GEOM creado.
+
+
+Sequence SEQ_INV_ASSIGNMENT creado.
+
+
+Sequence SEQ_INV_STATUS_HISTORY creado.
+
+
+Sequence SEQ_OPS_OPERATION creado.
+
+
+Table TB_INV_ASSIGNMENT creado.
+
+
+Table TB_INV_STATUS_HISTORY creado.
+
+
+Table TB_OPS_OPERATION creado.
+
+
+Table TB_OPS_OPERATION_COMPLAINT creado.
+
+
+INDEX UX_INVASG_ACTIVE_PER_COMPLAINT creado.
+
+
+Index IX_INVASG_OFFICER creado.
+
+
+Index IX_INVASG_COMPLAINT creado.
+
+
+Index IX_INVASG_ASSIGNER creado.
+
+
+Index IX_INVHST_COMPLAINT creado.
+
+
+Index IX_INVHST_OFFICER creado.
+
+
+Index IX_OPSOP_SECTOR creado.
+
+
+Index IX_OPSOP_LEADER creado.
+
+
+Index IX_OPSOC_COMPLAINT creado.
+
+
+Index IX_OPSOC_OFFICER creado.
+
+
+Trigger TRG_CPL_ESTAB_GEOM compilado
+
+
+Trigger TRG_CPL_COMPLAINT_GEOM compilado
+
+
+Trigger TRG_CPL_COMPLAINT_PEN compilado
+
+
+Trigger TRG_INV_HISTORY_IMMUTABLE compilado
+
+
+Trigger TRG_CHECK_MAX_ACTIVE_CASES compilado
+
+
+Trigger TRG_INV_ASSIGN_ACTIVE_FLAG compilado
+
+
+Trigger TRG_INV_ASSIGN_COUNT compilado
+
+
+Package PKG_ORG_MGMT compilado
+
+
+Package Body PKG_ORG_MGMT compilado
+
+Sin errores.
+Sin errores.
+
+Package PKG_CPL_MGMT compilado
+
+
+Package Body PKG_CPL_MGMT compilado
+
+Sin errores.
+Sin errores.
+
+Package PKG_INV_MGMT compilado
+
+
+Package Body PKG_INV_MGMT compilado
+
+Sin errores.
+Sin errores.
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+6 filas actualizadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+Confirmación terminada.
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+Confirmación terminada.
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+
+1 fila insertadas.
+
+Confirmación terminada.
+Establecimientos : 12
+Denunciantes     : 40
+Denuncias        : 80 (anonimas: 29)
+Evidencias       : 131
+
+Procedimiento PL/SQL terminado correctamente.
+
+TABLA                            FILAS
+--------------------------- ----------
+TB_CPL_MODALITY                      5
+TB_CPL_ESTABLISHMENT                12
+TB_CPL_REPORTER                     40
+TB_CPL_COMPLAINT_PROTECTION         29
+TB_CPL_COMPLAINT                    80
+TB_CPL_DIGITAL_EVIDENCE            131
+
+6 filas seleccionadas. 
+
+
+I CUR  DENUNCIAS TOTAL_ORIGINAL TOTAL_SOLES
+- --- ---------- -------------- -----------
+N EUR          2           1080        4428
+N PEN         34          56110       56110
+N USD         15          17690     66337,5
+Y EUR          3           1680        6888
+Y PEN         17          22640       22640
+Y USD          9           7600       28500
+
+6 filas seleccionadas. 
+
+no se ha seleccionado ninguna fila
+no se ha seleccionado ninguna fila
+
+CMP_SIN_GEOM EST_SIN_GEOM
+------------ ------------
+           0            0
+
+
+MES      DENUNCIAS
+------- ----------
+2025-11          4
+2025-12          5
+2026-01          5
+2026-02         10
+2026-03          6
+2026-04          5
+2026-05          9
+2026-06          7
+2026-07          5
+2026-08          2
+2026-09         11
+2026-10          7
+2026-11          4
+
+13 filas seleccionadas. 
+
+Carga de investigacion completada sobre 9 denuncias.
+
+Procedimiento PL/SQL terminado correctamente.
+Procedimiento PL/SQL terminado correctamente.
+
+View VW_CPL_REPORTER_PUBLIC creado.
+
+
+Grant correcto.
+
+
+Grant correcto.
+
+
+Grant correcto.
+
+
+Grant correcto.
+
+
+View VW_INV_CASE_TRACKING creado.
+
+
+View VW_STAFF_WORKLOAD creado.
+
+
+View VW_TERR_SECTOR_SITUATION creado.
+
+
+Grant correcto.
+
+
+Grant correcto.
+
+
+Grant correcto.
+
+
+Grant correcto.
+
+
+Grant correcto.
+
+
+Grant correcto.
+
+
+Grant correcto.
+
+
+Grant correcto.
+
+
+Grant correcto.
+
+
+Grant correcto.
+
+
+Grant correcto.
+
+
+Grant correcto.
+
+PASS  T01 convert_to_pen USD
+PASS  T02 PEN rate cannot change
+PASS  T03 unknown currency raises not found
+PASS  T04 new sector is found by GPS
+PASS  T05 station with sectors cannot be deleted
+PASS  T06 unknown station raises not found
+PASS  T07 point inside sector 1
+PASS  T08 shared edge belongs to one sector
+PASS  T09 point outside returns NULL
+PASS  T10 supervisor with lower rank is rejected
+PASS  T11 officer cannot supervise himself
+PASS  T12 officer with subordinates cannot be deleted
+Passed: 12 | Failed: 0
+
+Procedimiento PL/SQL terminado correctamente.
+=========== PRUEBAS pkg_cpl_mgmt ===========
+[OK]    T01 Ordinaria: guarda id_reporter y no codigo protegido (id 100081)
+[OK]    T01 Sector asignado automaticamente por GPS: 1
+[OK]    T01 Conversion: 300 USD = 1125 PEN
+[OK]    T01 Geometria generada por el trigger
+        Denunciante mostrado: Mario Salas Ruiz
+[OK]    T02 Anonima: la denuncia NO guarda id_reporter, solo el codigo 5029
+[OK]    T02 La identidad real queda solo en la proteccion (aprobada por 10000001)
+[OK]    T02 Enmascaramiento: *** IDENTIDAD RESERVADA (COD. 5029) ***
+[OK]    T03 Mismo DNI: se reutiliza el denunciante (42 = 42)
+[OK]    T04 Anonima sin oficial -> ORA-20114: Una denuncia anonima requiere el CIP del oficial que aprueba la reserva de identidad.
+[OK]    T05 Punto fuera de sector -> ORA-20113: Ningun sector contiene el punto (0, 0).
+[OK]    T06 Moneda inexistente -> ORA-20101: La moneda 9 no existe en TB_CFG_CURRENCY.
+[OK]    T06 Atomicidad: el denunciante insertado antes del error fue deshecho
+[OK]    T07 Edicion: 400 EUR = 1640 PEN
+[OK]    T08 Reubicacion: sector recalculado a 6
+[OK]    T09 Edicion fuera de REGISTRADO -> ORA-20118: La denuncia 100081 esta en estado VALIDADO_COMISARIA y ya no puede modificarse.
+[OK]    T10 CRUD modalidad: insertar, actualizar y leer (Modalidad de prueba editada)
+[OK]    T10 Leer modalidad eliminada -> ORA-20110: Modalidad 6 no existe.
+[OK]    T11 Modalidad duplicada -> ORA-20115: ins_modality: valor duplicado (PK/UK). ORA-00001: Se ha violado la restricción única (GEO_OWNER.UK_
+[OK]    T12 Eliminar modalidad en uso -> ORA-20111: del_modality: tiene registros dependientes. ORA-02292: restricción de integridad (GEO_OWNER.FK_CPL_
+[OK]    T13 CRUD evidencia: insertar, actualizar y leer (id 132)
+[OK]    T14 Tipo de evidencia invalido -> ORA-20116: upd_evidence: dato invalido. ORA-02290: restricción de control (GEO_OWNER.CHK_CPL_EV_TYPE) violada
+[OK]    T15 Baja de denuncia: se eliminaron su proteccion y sus evidencias
+[OK]    T16 Listado: 29 anonimas mostradas sin nombre ni documento
+============================================
+Resultado: 23 OK, 0 FALLA(S)
+
+Procedimiento PL/SQL terminado correctamente.
+REPORTE DE DENUNCIAS POR SECTOR (montos en soles)
+Periodo: inicio al hoy
+----------------------------------------------------------------------------------------------
+SECTOR                                CASOS  ANON.           TOTAL      PROMEDIO        MAXIMO
+----------------------------------------------------------------------------------------------
+SECTOR 05 - LOS OLIVOS PANAMERICANA      23      8    S/ 59,750.00   S/ 2,597.83   S/ 6,412.50
+SECTOR 04 - SAN HILARION SUR             17      7    S/ 41,360.00   S/ 2,432.94   S/ 6,337.50
+SECTOR 03 - SAN HILARION NORTE           13      4    S/ 26,912.50   S/ 2,070.19   S/ 6,937.50
+SECTOR 02 - CANTO REY RESIDENCIAL        12      5    S/ 23,693.50   S/ 1,974.46   S/ 6,562.50
+SECTOR 06 - INDEPENDENCIA TUPAC AMA       8      5    S/ 17,087.50   S/ 2,135.94   S/ 4,350.00
+SECTOR 01 - CANTO REY COMERCIAL           7      0    S/ 16,100.00   S/ 2,300.00   S/ 7,050.00
+----------------------------------------------------------------------------------------------
+TOTAL (6 sectores)                       80     29   S/ 184,903.50
+
+
+Procedimiento PL/SQL terminado correctamente.
+REPORTE DE DENUNCIAS POR MODALIDAD (montos en soles)
+Periodo: inicio al hoy
+------------------------------------------------------------------------------------------
+MODALIDAD                 SEVERIDAD    CASOS             TOTAL        PROMEDIO     % MONTO
+------------------------------------------------------------------------------------------
+Cobro de cupo             CRITICAL        21      S/ 52,342.00     S/ 2,492.48       28.3%
+Extorsion telefonica      HIGH            14      S/ 41,046.00     S/ 2,931.86       22.2%
+Gota a gota               HIGH            16      S/ 38,402.50     S/ 2,400.16       20.8%
+Paradero                  HIGH            16      S/ 28,883.50     S/ 1,805.22       15.6%
+Atentado                  CRITICAL        13      S/ 24,229.50     S/ 1,863.81       13.1%
+------------------------------------------------------------------------------------------
+TOTAL                                     80     S/ 184,903.50
+
+
+Procedimiento PL/SQL terminado correctamente.
+REPORTE MENSUAL DE DENUNCIAS (montos en soles)
+Anio: 2026
+----------------------------------------------------------
+MES         CASOS   PEN   USD   EUR         TOTAL EN SOLES
+----------------------------------------------------------
+2026-01         5     4     1     0           S/ 13,357.50
+2026-02        10     5     4     1           S/ 21,196.00
+2026-03         6     3     2     1           S/ 18,630.00
+2026-04         5     3     2     0           S/ 11,715.00
+2026-05         9     7     1     1           S/ 15,473.50
+2026-06         7     7     0     0            S/ 9,390.00
+2026-07         5     4     0     1            S/ 8,917.00
+2026-08         2     2     0     0            S/ 1,330.00
+2026-09        11     6     5     0           S/ 30,200.00
+2026-10         7     3     3     1           S/ 21,262.00
+2026-11         4     1     3     0           S/ 13,315.00
+----------------------------------------------------------
+TOTAL          71                            S/ 164,786.00
+
+
+Procedimiento PL/SQL terminado correctamente.
+REPORTE DE DENUNCIAS POR SECTOR (montos en soles)
+Periodo: 01/07/2026 al 30/09/2026
+----------------------------------------------------------------------------------------------
+SECTOR                                CASOS  ANON.           TOTAL      PROMEDIO        MAXIMO
+----------------------------------------------------------------------------------------------
+SECTOR 05 - LOS OLIVOS PANAMERICANA       8      4    S/ 21,182.50   S/ 2,647.81   S/ 6,037.50
+SECTOR 04 - SAN HILARION SUR              4      1    S/ 11,297.50   S/ 2,824.38   S/ 6,337.50
+SECTOR 06 - INDEPENDENCIA TUPAC AMA       2      2     S/ 5,280.00   S/ 2,640.00   S/ 4,350.00
+SECTOR 02 - CANTO REY RESIDENCIAL         2      2     S/ 1,697.00     S/ 848.50   S/ 1,107.00
+SECTOR 01 - CANTO REY COMERCIAL           1      0       S/ 860.00     S/ 860.00     S/ 860.00
+SECTOR 03 - SAN HILARION NORTE            1      1       S/ 130.00     S/ 130.00     S/ 130.00
+----------------------------------------------------------------------------------------------
+TOTAL (6 sectores)                       18     10    S/ 40,447.00
+
+
+Procedimiento PL/SQL terminado correctamente.
+=== A. Historial inmutable ===
+[PASS] T01 UPDATE sobre el historial bloqueado (esperado -20010)
+[PASS] T02 DELETE sobre el historial bloqueado (esperado -20010)
+=== B. change_status ===
+[PASS] T03 salto REGISTRADO -> RESUELTO rechazado (esperado -20021)
+[PASS] T04 observaciones nulas rechazadas (esperado -20020)
+[PASS] T05 observaciones demasiado cortas rechazadas (esperado -20020)
+[PASS] T06 transicion valida actualiza estado e historial
+=== C. Asignacion de investigador ===
+[PASS] T07 asignar pasa la denuncia a EN_INVESTIGACION y sube el contador
+[PASS] T08 segundo titular activo rechazado (indice unico) (esperado -1)
+[PASS] T09 reasignacion sin motivo rechazada (esperado -20033)
+[PASS] T10 reasignar al mismo titular rechazado (esperado -20032)
+[PASS] T11 reasignacion cierra la anterior y deja un solo titular activo
+[PASS] T12 detective no puede firmar su propia asignacion (CHECK) (esperado -2290)
+[PASS] T13 limite N de casos activos bloquea la asignacion (esperado -20001)
+=== D. Cierre de caso ===
+[PASS] T14 archivar cierra la asignacion y libera el cupo
+[PASS] T15 ARCHIVADO es estado terminal (esperado -20021)
+=== E. Operativos ===
+[PASS] T16 operativo con denuncia fuera de INTERVENCION_PROGRAMADA rechazado (esperado -20040)
+[PASS] T17 register_operation crea cabecera y vincula 1 denuncia
+[PASS] T18 borrar el operativo elimina en cascada sus relaciones
+=== F. Consistencia global ===
+[PASS] T19 active_case_count coincide con las asignaciones activas (filas con diferencia) (esperado 0)
+[PASS] T20 current_status coincide con el ultimo evento del historial (filas con diferencia) (esperado 0)
+[PASS] T21 ninguna denuncia con mas de un titular activo (esperado 0)
+-------------------------------------------
+Resultado: 21 PASS, 0 FAIL
+
+Procedimiento PL/SQL terminado correctamente.
+
+TABLA                           FILAS
+-------------------------- ----------
+TB_INV_ASSIGNMENT                   5
+TB_INV_STATUS_HISTORY              24
+TB_OPS_OPERATION                    1
+TB_OPS_OPERATION_COMPLAINT          1
+
+=== Vistas ===
+PASS  V01 vw_cpl_reporter_public no incluye denunciantes protegidos
+PASS  V02 vw_inv_case_tracking = denuncias abiertas (79)
+PASS  V03 vw_inv_case_tracking una fila por denuncia
+PASS  V04 pending_action SIN_INVESTIGADOR es coherente
+PASS  V05 vw_staff_workload una fila por efectivo (10)
+PASS  V06 vw_staff_workload sin contadores descuadrados
+PASS  V07 vw_terr_sector_situation una fila por sector (6)
+PASS  V08 vw_terr_sector_situation suma todas las denuncias (80)
+-------------------------------------------
+Resultado vistas: 8 PASS, 0 FAIL
+
+Procedimiento PL/SQL terminado correctamente.
+
+=== 1. Objetos INVALIDOS (esperado: no rows selected) ===
+no se ha seleccionado ninguna fila
+
+=== 2. Errores de compilación (esperado: no rows selected) ===
+no se ha seleccionado ninguna fila
+
+=== 3. Cantidad de objetos por tipo (esperado: 18 TABLE, 4 PACKAGE, 4 PACKAGE BODY, 4 VIEW) ===
+
+OBJECT_TYPE                  TOTAL
+----------------------- ----------
+INDEX                           63
+LOB                              9
+PACKAGE                          4
+PACKAGE BODY                     4
+SEQUENCE                        19
+TABLE                           18
+TRIGGER                          7
+VIEW                             4
+
+8 filas seleccionadas. 
+
+
+=== 4. Filas por tabla (ninguna debe estar en 0) ===
+
+TABLA                            FILAS
+--------------------------- ----------
+TB_CFG_CURRENCY                      3
+TB_ORG_DIVISION                      2
+TB_ORG_STATION                       4
+TB_TERR_SECTOR                       6
+TB_STAFF_RANK                        5
+TB_STAFF_OFFICER                    10
+TB_COM_CHANNEL                       3
+TB_COM_NEIGHBORHOOD_ASSOC            4
+TB_CPL_MODALITY                      5
+TB_CPL_ESTABLISHMENT                12
+TB_CPL_REPORTER                     40
+TB_CPL_COMPLAINT_PROTECTION         29
+TB_CPL_COMPLAINT                    80
+TB_CPL_DIGITAL_EVIDENCE            131
+TB_INV_ASSIGNMENT                    5
+TB_INV_STATUS_HISTORY               24
+TB_OPS_OPERATION                     1
+TB_OPS_OPERATION_COMPLAINT           1
+
+18 filas seleccionadas. 
+
+
+=== 5. Denuncias por estado (esperado: REGISTRADO 73, VALIDADO 2, EN_INVESTIGACION 2, INTERVENCION 1, DERIVADO 1, ARCHIVADO 1) ===
+
+CURRENT_STATUS                  DENUNCIAS
+------------------------------ ----------
+REGISTRADO                             73
+VALIDADO_COMISARIA                      2
+EN_INVESTIGACION                        2
+INTERVENCION_PROGRAMADA                 1
+DERIVADO_FISCALIA                       1
+ARCHIVADO                               1
+
+6 filas seleccionadas. 
+
+
+=== 6. Consistencia (los tres conteos deben ser 0) ===
+
+SECTORES_SIN_POLIGONO CONTADORES_INCORRECTOS DENUNCIAS_SIN_GEOMETRIA
+--------------------- ---------------------- -----------------------
+                    0                      0                       0
+
+
+=== 7. Roles y permisos (esperado: 4 roles, y GEO_CHIEF/GEO_APP/GEO_AUDITOR con su rol) ===
+
+TABLE_NAME
+--------------------------------------------------------------------------------------------------------------------------------
+GRANTEE                                                                                                                          PRIVILEGE                               
+-------------------------------------------------------------------------------------------------------------------------------- ----------------------------------------
+TB_CPL_COMPLAINT_PROTECTION                                                                                                      
+ROLE_GEO_ADMIN                                                                                                                   DELETE                                  
+
+TB_CPL_COMPLAINT_PROTECTION                                                                                                      
+ROLE_GEO_ADMIN                                                                                                                   INSERT                                  
+
+TB_CPL_COMPLAINT_PROTECTION                                                                                                      
+ROLE_GEO_ADMIN                                                                                                                   SELECT                                  
+
+TB_CPL_COMPLAINT_PROTECTION                                                                                                      
+ROLE_GEO_ADMIN                                                                                                                   UPDATE                                  
+
+TB_CPL_COMPLAINT_PROTECTION                                                                                                      
+ROLE_GEO_CHIEF                                                                                                                   SELECT                                  
+
+TB_CPL_REPORTER                                                                                                                  
+ROLE_GEO_ADMIN                                                                                                                   DELETE                                  
+
+TB_CPL_REPORTER                                                                                                                  
+ROLE_GEO_ADMIN                                                                                                                   INSERT                                  
+
+TB_CPL_REPORTER                                                                                                                  
+ROLE_GEO_ADMIN                                                                                                                   SELECT                                  
+
+TB_CPL_REPORTER                                                                                                                  
+ROLE_GEO_ADMIN                                                                                                                   UPDATE                                  
+
+TB_CPL_REPORTER                                                                                                                  
+ROLE_GEO_CHIEF                                                                                                                   SELECT                                  
+
+VW_CPL_REPORTER_PUBLIC                                                                                                           
+ROLE_GEO_ADMIN                                                                                                                   SELECT                                  
+
+VW_CPL_REPORTER_PUBLIC                                                                                                           
+ROLE_GEO_CHIEF                                                                                                                   SELECT                                  
+
+VW_CPL_REPORTER_PUBLIC                                                                                                           
+ROLE_GEO_OPERATOR                                                                                                                SELECT                                  
+
+VW_CPL_REPORTER_PUBLIC                                                                                                           
+ROLE_GEO_READONLY                                                                                                                SELECT                                  
+
+VW_INV_CASE_TRACKING                                                                                                             
+ROLE_GEO_ADMIN                                                                                                                   SELECT                                  
+
+VW_INV_CASE_TRACKING                                                                                                             
+ROLE_GEO_CHIEF                                                                                                                   SELECT                                  
+
+VW_INV_CASE_TRACKING                                                                                                             
+ROLE_GEO_OPERATOR                                                                                                                SELECT                                  
+
+VW_INV_CASE_TRACKING                                                                                                             
+ROLE_GEO_READONLY                                                                                                                SELECT                                  
+
+VW_STAFF_WORKLOAD                                                                                                                
+ROLE_GEO_ADMIN                                                                                                                   SELECT                                  
+
+VW_STAFF_WORKLOAD                                                                                                                
+ROLE_GEO_CHIEF                                                                                                                   SELECT                                  
+
+VW_STAFF_WORKLOAD                                                                                                                
+ROLE_GEO_OPERATOR                                                                                                                SELECT                                  
+
+VW_STAFF_WORKLOAD                                                                                                                
+ROLE_GEO_READONLY                                                                                                                SELECT                                  
+
+VW_TERR_SECTOR_SITUATION                                                                                                         
+ROLE_GEO_ADMIN                                                                                                                   SELECT                                  
+
+VW_TERR_SECTOR_SITUATION                                                                                                         
+ROLE_GEO_CHIEF                                                                                                                   SELECT                                  
+
+VW_TERR_SECTOR_SITUATION                                                                                                         
+ROLE_GEO_OPERATOR                                                                                                                SELECT                                  
+
+VW_TERR_SECTOR_SITUATION                                                                                                         
+ROLE_GEO_READONLY                                                                                                                SELECT                                  
+
+
+26 filas seleccionadas. 
+
+
+=== 8. Filas por vista (todas deben responder sin error; los conteos dependen de los datos) ===
+
+VISTA                         FILAS
+------------------------ ----------
+VW_CPL_REPORTER_PUBLIC           18
+VW_INV_CASE_TRACKING             79
+VW_STAFF_WORKLOAD                10
+VW_TERR_SECTOR_SITUATION          6
+
