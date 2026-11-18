@@ -83,7 +83,8 @@ CREATE TABLE tb_staff_officer (
   CONSTRAINT fk_staff_officer_station FOREIGN KEY (station_id)     REFERENCES tb_org_station (station_id),
   CONSTRAINT fk_staff_officer_super   FOREIGN KEY (supervisor_cip) REFERENCES tb_staff_officer (officer_cip),
   CONSTRAINT ck_staff_officer_super   CHECK (supervisor_cip IS NULL OR supervisor_cip <> officer_cip),
-  CONSTRAINT ck_staff_officer_spec    CHECK (specialty IN ('INVESTIGADOR_CRIMINAL', 'ORDEN_PUBLICO', 'INTELIGENCIA', 'ADMINISTRACION', 'TIC', 'SEGURIDAD_INTEGRAL', 'CRIMINALISTICA')),
+  CONSTRAINT ck_staff_officer_spec    CHECK (specialty IN ('INVESTIGADOR_CRIMINAL', 'ORDEN_PUBLICO', 'INTELIGENCIA', 
+  'ADMINISTRACION', 'TIC', 'SEGURIDAD_INTEGRAL', 'CRIMINALISTICA')),
   CONSTRAINT ck_staff_officer_cases   CHECK (active_case_count >= 0)
 ) TABLESPACE ts_geo_data;
 
