@@ -9,7 +9,6 @@
 -- =============================================================================
 
 CREATE OR REPLACE PACKAGE pkg_org_mgmt AS
-
   -- Currency.
   PROCEDURE insert_currency (p_code IN VARCHAR2, p_name IN VARCHAR2, p_rate IN NUMBER, p_id OUT NUMBER);
   PROCEDURE update_currency (p_id IN NUMBER, p_name IN VARCHAR2, p_rate IN NUMBER);
@@ -33,6 +32,7 @@ CREATE OR REPLACE PACKAGE pkg_org_mgmt AS
                            p_min_lat IN NUMBER, p_max_lat IN NUMBER,
                            p_min_lon IN NUMBER, p_max_lon IN NUMBER);
   PROCEDURE delete_sector (p_id IN NUMBER);
+  PROCEDURE close_station_and_sector(p_sector_id IN NUMBER, p_station_id IN NUMBER);
 
   -- Returns the sector containing the GPS point, or NULL.
   FUNCTION  find_sector_by_location (p_latitude IN NUMBER, p_longitude IN NUMBER) RETURN NUMBER;
@@ -40,6 +40,10 @@ CREATE OR REPLACE PACKAGE pkg_org_mgmt AS
   FUNCTION  build_rect_polygon (p_min_lat IN NUMBER, p_max_lat IN NUMBER,
                                 p_min_lon IN NUMBER, p_max_lon IN NUMBER) RETURN SDO_GEOMETRY;
 
+  PROCEDURE create_full_sector(p_div_name IN VARCHAR2, p_region IN VARCHAR2,
+                                p_station_name IN VARCHAR2, p_address IN VARCHAR2, 
+                                p_sector_name  IN VARCHAR2, p_min_lat IN NUMBER, p_max_lat IN NUMBER,
+                                p_min_lon IN NUMBER, p_max_lon IN NUMBER, p_sector_id OUT NUMBER);
   -- Rank.
   PROCEDURE insert_rank (p_name IN VARCHAR2, p_level IN NUMBER, p_id OUT NUMBER);
   PROCEDURE update_rank (p_id IN NUMBER, p_name IN VARCHAR2, p_level IN NUMBER);
@@ -53,16 +57,14 @@ CREATE OR REPLACE PACKAGE pkg_org_mgmt AS
                             p_rank_id IN NUMBER, p_station_id IN NUMBER,
                             p_supervisor_cip IN VARCHAR2, p_specialty IN VARCHAR2);
   PROCEDURE delete_officer (p_cip IN VARCHAR2);
-
+    
 END pkg_org_mgmt;
 /
 
 CREATE OR REPLACE PACKAGE BODY pkg_org_mgmt AS
-
   -- ===================================================================
   -- PRIVATE SUBPROGRAMS
   -- ===================================================================
-
   -- Raises -20001 if the previous UPDATE/DELETE affected no rows.
   PROCEDURE check_updated (p_entity IN VARCHAR2, p_key IN VARCHAR2) IS
   BEGIN
@@ -191,6 +193,41 @@ CREATE OR REPLACE PACKAGE BODY pkg_org_mgmt AS
     DELETE FROM tb_terr_sector WHERE sector_id = p_id;
     check_updated('Sector', p_id);
   END delete_sector;
+  
+  PROCEDURE create_full_sector (
+      p_div_name     IN VARCHAR2, p_region      IN VARCHAR2,
+      p_station_name IN VARCHAR2, p_address     IN VARCHAR2,
+      p_sector_name  IN VARCHAR2,
+      p_min_lat      IN NUMBER,   p_max_lat     IN NUMBER,
+      p_min_lon      IN NUMBER,   p_max_lon     IN NUMBER,
+      p_sector_id    OUT NUMBER
+  )IS
+      v_div_id     NUMBER;
+      v_station_id NUMBER;
+  BEGIN
+      SAVEPOINT sp_create_sector;
+      insert_division(p_div_name, p_region, v_div_id);
+      insert_station(v_div_id, p_station_name, p_address, v_station_id);
+      insert_sector(v_station_id, p_sector_name, p_min_lat, p_max_lat, p_min_lon, p_max_lon, p_sector_id);
+  EXCEPTION
+    WHEN OTHERS THEN
+       ROLLBACK TO sp_create_sector; 
+       RAISE;                 
+  END create_full_sector;
+
+    PROCEDURE close_station_and_sector (
+      p_sector_id  IN NUMBER,
+      p_station_id IN NUMBER
+    ) IS
+    BEGIN
+      SAVEPOINT sp_close_station; 
+      delete_sector(p_sector_id);
+      delete_station(p_station_id);
+    EXCEPTION
+      WHEN OTHERS THEN
+        ROLLBACK TO sp_close_station; 
+        RAISE;
+    END close_station_and_sector;
 
   -- Rectangle polygon: x = longitude, y = latitude, closed with the first point.
   FUNCTION build_rect_polygon (p_min_lat IN NUMBER, p_max_lat IN NUMBER,
