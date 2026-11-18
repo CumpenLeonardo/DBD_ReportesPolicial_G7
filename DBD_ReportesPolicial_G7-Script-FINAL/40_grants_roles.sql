@@ -99,6 +99,8 @@ SELECT c.complaint_id,
                                AND a.end_date IS NULL
   LEFT JOIN tb_staff_officer o ON o.officer_cip = a.officer_cip
  WHERE c.current_status NOT IN ('ARCHIVADO', 'RESUELTO');
+ 
+ select * from VW_INV_CASE_TRACKING;
 
 -- -----------------------------------------------------------------------------
 -- VW_STAFF_WORKLOAD: one row per officer with rank, station, division and supervisor,
@@ -138,6 +140,7 @@ SELECT o.officer_cip,
               WHERE operation_status IN ('PROGRAMADO', 'EN EJECUCION', 'RETRASADO')
               GROUP BY leader_cip) l ON l.leader_cip = o.officer_cip;
 
+select * from vw_staff_workload;
 -- -----------------------------------------------------------------------------
 -- VW_TERR_SECTOR_SITUATION: per-sector status (including sectors without complaints).
 -- Combines complaints, operations and boards to show where police presence is lacking.
@@ -174,11 +177,12 @@ SELECT s.sector_id,
                            WHERE o.operation_status <> 'CANCELADO') cov ON cov.complaint_id = c.complaint_id
               GROUP BY c.sector_id) cp ON cp.sector_id = s.sector_id
   LEFT JOIN (SELECT sector_id,
-                    MAX(CASE WHEN operation_status = 'EJECUTADO'  THEN operation_date END) AS last_executed_operation,
-                    MIN(CASE WHEN operation_status = 'PROGRAMADO' THEN operation_date END) AS next_scheduled_operation
+                    TO_CHAR(MAX(CASE WHEN operation_status = 'EJECUTADO'  THEN operation_date END), 'DD/MM/YYYY HH24:MI:SS') AS last_executed_operation,
+                    TO_CHAR(MIN(CASE WHEN operation_status = 'PROGRAMADO' THEN operation_date END), 'DD/MM/YYYY HH24:MI:SS') AS next_scheduled_operation
                FROM tb_ops_operation
               GROUP BY sector_id) op ON op.sector_id = s.sector_id;
 
+select * from vw_terr_sector_situation;
 
 -- All roles can query these views (read-only).
 GRANT SELECT ON vw_inv_case_tracking TO role_geo_admin;
